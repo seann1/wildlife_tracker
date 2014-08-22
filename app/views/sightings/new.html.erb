@@ -1,0 +1,31 @@
+<div class="container">
+<div class="jumbotron">
+<h1>New Sighting</h1>
+</div>
+<div class="buttonholder">
+<form action="." method="post">
+
+  <label for="date">Date</label>
+  <input id="date" name="date" type="text" value="<%= @sighting.date %>">
+
+  <label for="latitude">Latitude</label>
+  <input id="latitude" name="latitude" type="text" value="<%= @sighting.latitude %>">
+
+  <label for="longitude">Longitude</label>
+  <input id="longitude" name="longitude" type="text" value="<%= @sighting.longitude %>">
+
+  <button type="submit">+</button>
+</form>
+</div>
+
+<p><a href="/species/">Return to species</a></p>
+
+
+<% if @sighting.errors.any? %>
+  <ul>
+    <% @sighting.errors.full_messages.each do |message| %>
+      <li class="errors"><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
+</div>

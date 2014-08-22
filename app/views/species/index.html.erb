@@ -1,0 +1,12 @@
+<div class="container">
+<div class="jumbotron">
+<h1>Species</h1>
+</div>
+<ul>
+  <% @species.each do |species| %>
+    <li><a href="/species/<%= species.id %>"><%= species.name %></li>
+  <% end %>
+</ul>
+
+<p><a href="/species/new/">Create a new species</p>
+</div>

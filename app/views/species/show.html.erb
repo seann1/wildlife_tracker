@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="jumbotron">
+<h2><a href="/species/">home</a></h2>
+</div>
+<p><a href="/species/<%= @species.id %>/edit">edit species name</a></p>
+<p><a href="/species/<%= @species.id %>/destroy"
+      data-confirm="You sure?"
+      data-method="delete"
+      rel="nofollow">delete species</a></p>
+<h1><%= @species.name %></h1>
+
+<ul>
+  <% @species.sightings.each do |sighting| %>
+    <li><a href="<%= @species.id %>/sightings/<%= sighting.id %>/edit"><%= sighting.date %></a></li>
+    <li><a href="<%= @species.id %>/sightings/<%= sighting.id %>/edit"><%= "#{sighting.latitude}, #{sighting.longitude}" %></a></li>
+    <br>
+  <% end %>
+</ul>
+
+<p><a href="<%= @species.id %>/sightings/new">Enter new sighting</a></p>
+</div>

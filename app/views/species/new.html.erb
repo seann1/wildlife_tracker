@@ -1,0 +1,24 @@
+<div class="container">
+<div class="jumbotron">
+<h1>New Species</h1>
+</div>
+
+<div class="buttonholder">
+<form action="/species/" method="post">
+  <label for="species_name">Name</label>
+  <input id="species_name" name="name" type="text" value="<%= @species.name %>">
+  <button type="submit">+</button>
+</form>
+</div>
+
+<p><a href="/species/">Return to species list</a></p>
+
+
+<% if @species.errors.any? %>
+  <ul>
+    <% @species.errors.full_messages.each do |message| %>
+      <li class="errors"><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
+</div>
